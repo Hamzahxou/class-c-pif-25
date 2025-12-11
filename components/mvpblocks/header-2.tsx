@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import fire from "@/public/fire.gif";
+import fire from "@/public/assets/fire.gif";
 import Image from "next/image";
 
 interface NavItem {
@@ -177,7 +177,7 @@ export default function Header2({ navItems }: { navItems: NavItem[] }) {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
-              className="border-border bg-background fixed top-16 right-4 z-50 w-80 overflow-hidden rounded-2xl border shadow-2xl lg:hidden"
+              className="border-border bg-background fixed top-16 right-4 z-50 w-80 overflow-hidden rounded-2xl border shadow-2xl lg:hidden mt-3"
               variants={mobileMenuVariants}
               initial="closed"
               animate="open"

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Pif Cetar",
     images: [
       {
-        url: "/bg.jpg",
+        url: "/assets/bg.jpg",
         width: 1200,
         height: 630,
         alt: "Pif Cetar Thumbnail",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pif Cetar",
     description: "Website for Pif Cetar Universitas Trunojoyo Madura",
-    images: ["/bg.jpg"],
+    images: ["/assets/bg.jpg"],
   },
 };
 

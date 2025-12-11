@@ -1,5 +1,9 @@
+import Anggota from "@/components/Anggota";
+import Galeri from "@/components/Galeri";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Informasi from "@/components/Informasi";
+import Kontak from "@/components/Kontak";
 import Tentang from "@/components/Tentang";
 
 export default function Home() {
@@ -23,12 +27,21 @@ export default function Home() {
         />
         {/* Your Content/Components */}
       </div>
+      <main>
+        <Header />
 
-      <Header />
+        <Hero />
 
-      <Hero />
+        <Tentang />
 
-      <Tentang />
+        <Anggota />
+
+        <Galeri />
+
+        <Informasi />
+
+        <Kontak />
+      </main>
     </>
   );
 }
