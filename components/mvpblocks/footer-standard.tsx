@@ -1,10 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
-import { Input } from "@/components/ui/input";
 import { Instagram, Music2, ArrowDownLeft } from "lucide-react";
 
 const data = () => ({

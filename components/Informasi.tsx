@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Informasi() {
   return (
     <section className="bg-gray-100/50" id="informasi">
