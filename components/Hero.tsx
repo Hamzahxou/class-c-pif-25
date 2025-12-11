@@ -4,12 +4,12 @@ import { Button } from "./ui/button";
 export default function Hero() {
   return (
     <div
-      className="container min-h-screen flex justify-center items-center mx-auto px-4 lg:w-5xl"
+      className="container min-h-screen flex justify-center items-center mx-auto px-4"
       id="beranda"
     >
-      <div className="relative bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat p-5 rounded-2xl shadow-2xl overflow-hidden ">
+      <div className="relative bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat p-5 rounded-2xl shadow-2xl overflow-hidden  lg:w-5xl">
         {/* Overlay hitam */}
-        <div className="absolute inset-0 bg-black/80"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Konten */}
         <div className="relative z-10 text-white px-5 py-10">
