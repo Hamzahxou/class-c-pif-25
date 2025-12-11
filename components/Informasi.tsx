@@ -7,6 +7,12 @@ export default function Informasi() {
         <h1 className="lg:text-4xl text-3xl font-bold text-center mb-10">
           Informasi
         </h1>
+
+        <p className="text-center text-base text-gray-400/40">
+          Informasi belum ditambahkan.
+          <br />
+          Kami akan segera menambahkan informasi lengkap disini.
+        </p>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { X } from "lucide-react";
 
 export default function MasonryGallery({ images }: { images: string[] }) {
@@ -48,26 +49,32 @@ export default function MasonryGallery({ images }: { images: string[] }) {
 
       {isClicked && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center  bg-black/50 p-4 backdrop-blur-sm max-h-screen overflow-hidden"
           onClick={() => setIsClicked(false)}
         >
-          <div onClick={(e) => e.stopPropagation()} className="relative">
-            {/* <div
-              className="absolute -top-10 right-0 flex h-9 w-9 items-center justify-center rounded-xl  overflow-hidden shadow-md bg-white"
-              onClick={() => setIsClicked(false)}
-            >
-              <X className="h-6 w-6" />
-            </div> */}
+          <div
+            className="absolute top-0 m-5 right-0 flex h-9 w-9 items-center justify-center rounded-xl  verflow-hidden shadow-md bg-white/50"
+            onClick={() => setIsClicked(false)}
+          >
+            <X className="h-6 w-6" />
+          </div>
 
-            <motion.img
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
               src={url}
               alt={`show`}
-              className={`w-full rounded-lg object-cover transition-all duration-300 ease-in-out
+              width={500}
+              height={500}
+              className={` rounded-lg object-cover transition-all duration-300 ease-in-out  
             `}
-              whileHover={{ scale: 1.05 }}
-              loading="lazy"
             />
-          </div>
+          </motion.div>
         </div>
       )}
     </>
