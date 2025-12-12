@@ -2,7 +2,7 @@ import Anggota from "@/components/Anggota";
 import Galeri from "@/components/Galeri";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Informasi from "@/components/Informasi";
+// import Informasi from "@/components/Informasi";
 import Kontak from "@/components/Kontak";
 import Tentang from "@/components/Tentang";
 
@@ -27,9 +27,9 @@ export default function Home() {
         />
         {/* Your Content/Components */}
       </div>
-      <main>
-        <Header />
+      <Header />
 
+      <main>
         <Hero />
 
         <Tentang />
@@ -38,7 +38,7 @@ export default function Home() {
 
         <Galeri />
 
-        <Informasi />
+        {/* <Informasi /> */}
 
         <Kontak />
       </main>

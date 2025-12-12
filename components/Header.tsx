@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
   { name: "Tentang", href: "/#tentang" },
   { name: "Anggota", href: "/#anggota" },
   { name: "Galeri", href: "/#galeri" },
-  { name: "Informasi", href: "/#informasi" },
+  { name: "Aktivitas", href: "/aktivitas" },
   { name: "Kontak", href: "/#kontak" },
 ];
 
