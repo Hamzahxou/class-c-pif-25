@@ -15,7 +15,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function Galeripage() {
   const searchParams = useSearchParams();
-  const date = searchParams.get("date");
+  const date = searchParams.get("date") || "";
   return (
     <div className="container min-h-screen mx-auto lg:w-5xl px-5 py-10">
       <Breadcrumbs />
