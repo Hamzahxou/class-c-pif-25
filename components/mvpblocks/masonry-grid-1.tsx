@@ -92,7 +92,7 @@ export default function MasonryGallery({
             transition={{ duration: 0.4, delay: 1 }}
             viewport={{ once: true }}
           >
-            <Link href={`/galeri?date=${dateSearch}`}>
+            <Link href={`/galeri/${dateSearch}`}>
               <Button
                 variant={"secondary"}
                 className="flex gap-2 items-center text-black cursor-pointer hover:bg-white/90"
