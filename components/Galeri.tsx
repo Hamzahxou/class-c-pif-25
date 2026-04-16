@@ -1,4 +1,3 @@
-import { images } from "@/data/galeri";
 import MasonryGallery from "./mvpblocks/masonry-grid-1";
 
 export default function Galeri() {
@@ -11,7 +10,7 @@ export default function Galeri() {
         Galeri
       </h1>
 
-      <MasonryGallery images={images} more={true} shouldSlice={true} />
+      <MasonryGallery more={true} shouldSlice={true} />
     </section>
   );
 }

@@ -42,11 +42,12 @@ export default function Anggota() {
 }
 
 // function CardSwipes() {
-//   const images = [
-//     { src: "/assets/anggota/contoh-1.png", alt: "Image 1" },
-//     { src: "/assets/anggota/contoh-2.png", alt: "Image 2" },
-//     { src: "/assets/anggota/contoh-3.png", alt: "Image 3" },
-//   ];
+//   const namaAnggota = ["hamzah", "irsyad"];
+
+//   const images = namaAnggota.map((nama) => ({
+//     src: `/assets/anggota/${nama.toLowerCase()}.png`,
+//     alt: nama,
+//   }));
 
 //   return (
 //     <div className="w-full">
@@ -56,11 +57,12 @@ export default function Anggota() {
 // }
 
 function CardCarousels() {
-  const images = [
-    { src: "/assets/anggota/contoh-1.png", alt: "Image 1" },
-    { src: "/assets/anggota/contoh-2.png", alt: "Image 2" },
-    { src: "/assets/anggota/contoh-3.png", alt: "Image 3" },
-  ];
+  const namaAnggota = ["hamzah", "irsyad", "dani"];
+
+  const images = namaAnggota.map((nama) => ({
+    src: `/assets/anggota/${nama.toLowerCase()}.png`,
+    alt: nama,
+  }));
 
   return (
     <div className="">

@@ -18,12 +18,12 @@ export default function Tentang() {
           className="rounded-sm w-full"
         />
         <p className="leading-loose text-justify">
-          Pendidikan Informatika Kelas 1C adalah kelas yang kompak dan penuh
-          vibes positif.Di sini, kita nggak cuma belajar teori, tapi juga
-          praktik bareng, diskusi santai, dan ikut berbagai kegiatan seru bikin
-          ilmu makin nempel.Dengan suasana kelas yang suportif dan saling
-          mendukung, kita tumbuh bersama jadi calon pendidik yang kreatif,
-          percaya diri, dan siap berkembang.
+          Pendidikan Informatika Kelas c adalah kelas yang kompak dan penuh
+          vibes positif. Di sini, kita nggak cuma belajar teori, tapi juga
+          praktik bareng, diskusi santai, dan ikut berbagai kegiatan seru
+          .Dengan suasana kelas yang suportif dan saling mendukung, kita tumbuh
+          bersama jadi calon pendidik yang kreatif, percaya diri, dan siap
+          berkembang.
         </p>
       </div>
     </section>

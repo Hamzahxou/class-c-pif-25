@@ -8,14 +8,18 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { images } from "@/data/galeri";
 
-export default function Galeripage({ params }: { params: { date: string } }) {
-  const { date } = params;
+export default async function Galeripage({
+  params,
+}: {
+  params: Promise<{ year: string }>;
+}) {
+  // Ambil parameter year dengan await
+  const { year } = await params;
   return (
     <div className="container min-h-screen mx-auto lg:w-5xl px-5 py-10">
       <Breadcrumbs />
-      <MasonryGallery images={images} more={false} dateparams={date} />
+      <MasonryGallery more={false} dateparams={year} singlePage={true} />
     </div>
   );
 }

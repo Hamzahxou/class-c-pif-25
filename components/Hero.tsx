@@ -10,7 +10,7 @@ export default function Hero() {
     >
       <div className="relative bg-[url('/assets/bg.jpg')] bg-cover bg-bottom bg-no-repeat p-5 rounded-2xl shadow-2xl overflow-hidden  lg:w-5xl">
         {/* Overlay hitam */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Konten */}
         <div className="relative z-10 text-white px-5 py-10">
@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
 
           <p className="mb-6">
-            Website resmi Pendidikan Informatika kelas 1C. Tempat berbagi
+            Website resmi Pendidikan Informatika kelas C. Tempat berbagi
             informasi, pengumuman, dokumentasi kegiatan, dan berbagai hal yang
             berkaitan dengan perjalanan akademik kita bersama.
           </p>

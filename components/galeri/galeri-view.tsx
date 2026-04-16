@@ -11,18 +11,13 @@ import {
 } from "@/components/ui/breadcrumb";
 import { useSearchParams } from "next/navigation";
 
-interface ImageProps {
-  url: string;
-  date: string;
-}
-
-export default function GaleriView({ images }: { images: ImageProps[] }) {
+export default function GaleriView() {
   const searchParams = useSearchParams();
   const date = searchParams.get("date") || "";
   return (
     <>
       <Breadcrumbs />
-      <MasonryGallery images={images} more={false} dateparams={date} />
+      <MasonryGallery more={false} dateparams={date} />
     </>
   );
 }
