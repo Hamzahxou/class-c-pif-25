@@ -66,6 +66,7 @@ export const images2 = [
       "/assets/galeri/2026/01.jpg",
       "/assets/galeri/2026/04.jpg",
       "/assets/galeri/2026/02.jpg",
+      "/assets/galeri/2026/03.jpg",
       "/assets/galeri/2026/05.jpg",
     ],
   },
