@@ -48,8 +48,8 @@ export default function FooterStandard() {
               <span className="text-xl font-bold">PIF Class Cetar</span>
             </Link>
             <p className="text-muted-foreground max-w-md">
-              Website resmi Pendidikan Informatika 1C. Tempat kita belajar,
-              diskusi, dan kadang pusing bareng—tapi tetap solid seperti
+              Website resmi Pendidikan Informatika C. Tempat kita belajar,
+              diskusi, dan kadang pusing bareng tapi tetap solid seperti
               semangat mengerjakan tugas H-1 sebelum deadline.
             </p>
             <div className="flex items-center gap-2">

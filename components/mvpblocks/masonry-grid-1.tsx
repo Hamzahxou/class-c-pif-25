@@ -1,7 +1,8 @@
 "use client";
+
 import { images2 } from "@/data/galeri";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Images, X } from "lucide-react";
 import Link from "next/link";
@@ -10,7 +11,7 @@ import { Button } from "../ui/button";
 const years = ["2025", "2026", "2027", "2028", "2029"];
 
 interface ImageProps {
-  url: string[]; // Sesuai data Anda yang berupa Array
+  url: string[];
   date: string;
 }
 
@@ -26,152 +27,146 @@ export default function MasonryGallery({
   singlePage?: boolean;
 }) {
   const images = images2 as ImageProps[];
-  const [hovered, setHovered] = useState<string | null>(null); // Menggunakan string (URL) sebagai id hover
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-  const [selectedUrl, setSelectedUrl] = useState<string>("");
+  const [hovered, setHovered] = useState<string | null>(null);
+  const [selectedUrl, setSelectedUrl] = useState<string | null>(null);
   const [dateSearch, setDateSearch] = useState<string>(dateparams || "2025");
 
-  // 1. Filter data berdasarkan tahun
-  const filteredData = images.filter((img) => img.date === dateSearch);
+  // 1. Optimasi Filter: Hanya berjalan jika images atau tahun berubah
+  const displayedImages = useMemo(() => {
+    const filtered = images
+      .filter((img) => img.date === (singlePage ? dateparams : dateSearch))
+      .flatMap((item) => item.url);
 
-  // 2. Karena data Anda nested (array di dalam array), kita perlu meratakannya (flatten)
-  // agar Masonry columns-nya bekerja dengan benar untuk setiap gambar individu.
-  const allImagesInYear = filteredData.flatMap((item) => item.url);
-
-  // 3. Terapkan slice jika diperlukan
-  const displayedImages = shouldSlice
-    ? allImagesInYear.slice(0, 10)
-    : allImagesInYear;
+    return shouldSlice ? filtered.slice(0, 10) : filtered;
+  }, [images, dateSearch, dateparams, singlePage, shouldSlice]);
 
   return (
     <>
       {/* Filter Tahun */}
       <div className="flex justify-center items-center gap-5 text-md py-5">
-        {singlePage
-          ? years.map((year) => (
+        {years.map((year) => {
+          const isActive = singlePage
+            ? year === dateparams
+            : year === dateSearch;
+
+          if (singlePage) {
+            return (
               <Link
                 key={year}
-                className={`${
-                  year === dateparams
-                    ? "text-primary font-bold"
-                    : "text-muted-foreground"
-                } cursor-pointer transition-colors`}
                 href={`/galeri/${year}`}
+                className={`${
+                  isActive ? "text-primary font-bold" : "text-muted-foreground"
+                } cursor-pointer transition-colors hover:text-primary`}
               >
                 {year}
               </Link>
-            ))
-          : years.map((year) => (
-              <span
-                key={year}
-                className={`${
-                  year === dateSearch
-                    ? "text-primary font-bold"
-                    : "text-muted-foreground"
-                } cursor-pointer transition-colors`}
-                onClick={() => setDateSearch(year)}
-              >
-                {year}
-              </span>
-            ))}
-      </div>
-
-      {/* Grid Masonry */}
-      <div className="columns-2 gap-4 space-y-4 transition-all sm:columns-2 md:columns-4 lg:columns-5">
-        {displayedImages.map((imageUrl, index) => {
-          // Ambil nama file untuk alt (misal: "01" dari "/assets/galeri/2025/01.jpg")
-          const fileName = imageUrl.split("/").pop()?.split(".")[0] || index;
+            );
+          }
 
           return (
-            <motion.div
-              key={imageUrl}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: (index % 10) * 0.05 }}
-              viewport={{ once: true }}
-              onMouseEnter={() => setHovered(imageUrl)}
-              onMouseLeave={() => setHovered(null)}
-              className="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out"
+            <span
+              key={year}
+              onClick={() => setDateSearch(year)}
+              className={`${
+                isActive ? "text-primary font-bold" : "text-muted-foreground"
+              } cursor-pointer transition-colors hover:text-primary`}
             >
-              <motion.img
-                src={imageUrl}
-                alt={String(fileName)}
-                className={`w-full rounded-lg object-cover transition-all duration-300 ease-in-out cursor-pointer
-                  ${
-                    hovered === null
-                      ? "blur-0 scale-100"
-                      : hovered === imageUrl
-                        ? "blur-0 scale-105"
-                        : "blur-[1px] opacity-80"
-                  }`}
-                whileHover={{ scale: 1.05 }}
-                loading="lazy"
-                onClick={() => {
-                  setIsClicked(true);
-                  setSelectedUrl(imageUrl);
-                }}
-              />
-            </motion.div>
+              {year}
+            </span>
           );
         })}
       </div>
 
-      {/* Tombol Lihat Lebih Banyak */}
-      {more && allImagesInYear.length > 10 && (
-        <div className="flex justify-center items-center mt-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <Link href={`/galeri/${dateSearch}`}>
-              <Button
-                variant={"secondary"}
-                className="flex gap-2 items-center text-black cursor-pointer hover:bg-white/90"
+      {/* Grid Masonry */}
+      <div className="columns-2 gap-4 space-y-4 sm:columns-3 md:columns-4 lg:columns-5">
+        <AnimatePresence mode="popLayout">
+          {displayedImages.map((imageUrl, index) => {
+            const fileName = imageUrl.split("/").pop()?.split(".")[0] || index;
+
+            return (
+              <motion.div
+                key={imageUrl}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, delay: (index % 10) * 0.05 }}
+                viewport={{ once: true }}
+                onMouseEnter={() => setHovered(imageUrl)}
+                onMouseLeave={() => setHovered(null)}
+                className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
+                onClick={() => setSelectedUrl(imageUrl)}
               >
-                <Images className="h-5 w-5 text-black" />
-                Lihat Lebih Banyak
-              </Button>
-            </Link>
-          </motion.div>
+                <Image
+                  src={imageUrl}
+                  alt={`Gallery ${fileName}`}
+                  width={500} // Responsif berdasarkan container
+                  height={700}
+                  loading="lazy"
+                  className={`w-full h-auto object-cover transition-all duration-500 
+                    ${hovered && hovered !== imageUrl ? "blur-[2px] opacity-60" : "blur-0 scale-100"}
+                    ${hovered === imageUrl ? "scale-110" : ""}
+                  `}
+                />
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+
+      {/* Tombol Lihat Lebih Banyak */}
+      {more && displayedImages.length >= 10 && (
+        <div className="flex justify-center items-center mt-10">
+          <Link href={`/galeri/${dateSearch}`}>
+            <Button
+              variant="secondary"
+              className="flex gap-2 items-center text-black hover:bg-white/90"
+            >
+              <Images className="h-5 w-5" />
+              Lihat Lebih Banyak
+            </Button>
+          </Link>
         </div>
       )}
 
       {/* Modal Preview */}
-      {isClicked && (
-        <div
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
-          onClick={() => setIsClicked(false)}
-        >
-          {/* Close Button */}
-          <div
-            className="absolute top-5 right-5  flex h-12 w-12 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-pointer text-white"
-            onClick={() => setIsClicked(false)}
-          >
-            <X className="h-8 w-8" />
-          </div>
-
+      <AnimatePresence>
+        {selectedUrl && (
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="relative flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-110 flex items-center justify-center bg-black/75 p-4 backdrop-blur-md"
+            onClick={() => setSelectedUrl(null)}
           >
-            <Image
-              src={selectedUrl}
-              alt="Preview"
-              // Masukkan angka besar sebagai referensi max-resolution
-              width={1200}
-              height={1200}
-              priority
-              className="rounded-2xl shadow-2xl 
-                 max-w-full max-h-[75vh] 
+            <button
+              className="absolute top-5 right-5 z-110 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all text-white"
+              onClick={() => setSelectedUrl(null)}
+            >
+              <X className="h-8 w-8" />
+            </button>
+
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-5xl w-full h-[80vh]flex content-center place-items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedUrl}
+                alt="Preview Full"
+                width={1200}
+                height={1200}
+                priority
+                className="rounded-2xl shadow-2xl
+                 max-w-full max-h-[75vh]
                  w-auto h-auto object-contain"
-            />
+              />
+            </motion.div>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }

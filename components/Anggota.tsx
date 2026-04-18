@@ -1,5 +1,6 @@
 // import { CardSwipe } from "@/components/ui/card-swipe";
 import { CardCarousel } from "@/components/ui/card-carousel";
+import { anggotaKelas } from "@/data/anggota";
 
 export default function Anggota() {
   return (
@@ -11,22 +12,24 @@ export default function Anggota() {
 
         <div className="mb-10">
           <div className="grid grid-cols-3 gap-2 lg:w-2xl mx-auto">
-            <div className="flex items-center justify-center flex-col rounded-md  overflow-hidden shadow-sm p-5 hover:-translate-y-1 transition-all ">
+            <div className="flex items-center justify-center flex-col rounded-md  overflow-hidden shadow-sm p-5 transition-all">
+              <h3 className="text-2xl font-bold mb-2 text-black/50">0</h3>
+              <p className="text-xs text-nowrap font-normal text-black/50 lg:text-md">
+                Tidak Aktif
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center flex-col rounded-md  overflow-hidden shadow-sm p-5 -translate-y-2 transition-all ">
               <h3 className="text-2xl font-bold mb-2">26</h3>
               <p className="text-xs text-nowrap font-normal lg:text-md">
                 Aktif
               </p>
             </div>
-            <div className="flex items-center justify-center flex-col rounded-md  overflow-hidden shadow-sm p-5 hover:-translate-y-1 transition-all">
-              <h3 className="text-2xl font-bold mb-2">0</h3>
-              <p className="text-xs text-nowrap font-normal lg:text-md">
-                Non Aktif
-              </p>
-            </div>
-            <div className="flex items-center justify-center flex-col rounded-md  overflow-hidden shadow-sm p-5 hover:-translate-y-1 transition-all">
-              <h3 className="text-2xl font-bold mb-2">0</h3>
-              <p className="text-xs text-nowrap font-normal lg:text-md">
-                Drop Out
+
+            <div className="flex items-center justify-center flex-col rounded-md  overflow-hidden shadow-sm p-5 transition-all">
+              <h3 className="text-2xl font-bold mb-2 text-black/50">0</h3>
+              <p className="text-xs text-nowrap font-normal text-black/50 lg:text-md">
+                Keluar
               </p>
             </div>
           </div>
@@ -57,11 +60,9 @@ export default function Anggota() {
 // }
 
 function CardCarousels() {
-  const namaAnggota = ["hamzah", "irsyad", "dani"];
-
-  const images = namaAnggota.map((nama) => ({
-    src: `/assets/anggota/${nama.toLowerCase()}.png`,
-    alt: nama,
+  const images = anggotaKelas.map((anggota) => ({
+    src: anggota.image,
+    alt: anggota.name,
   }));
 
   return (
