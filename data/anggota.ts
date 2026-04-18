@@ -27,4 +27,8 @@ export const anggotaKelas = [
     name: "Farel Z",
     image: "/assets/anggota/farelz.png",
   },
+  {
+    name: "Imal",
+    image: "/assets/anggota/imal.png",
+  },
 ];
