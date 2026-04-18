@@ -9,13 +9,14 @@ const poppins = Poppins({
   variable: "--font-poppins", // Define a CSS variable name
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pif-class-c.vercel.app"),
   title: "Pif Cetar",
   description: "Website for Pif Cetar Universitas Trunojoyo Madura",
 
   openGraph: {
     title: "Pif Cetar",
     description: "Website for Pif Cetar Universitas Trunojoyo Madura",
-    // url: "https://pifcetar.com", // opsional
+    url: "https://pif-class-c.vercel.app", // opsional
     siteName: "Pif Cetar",
     images: [
       {

@@ -101,6 +101,7 @@ export default function Header2({ navItems }: { navItems: NavItem[] }) {
                       alt="fire"
                       width={100}
                       height={100}
+                      unoptimized
                       className="scale-[3]"
                     />
                   </div>
