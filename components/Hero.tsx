@@ -8,7 +8,7 @@ export default function Hero() {
       className="container min-h-screen flex justify-center items-center mx-auto px-4"
       id="beranda"
     >
-      <div className="relative bg-[url('/assets/bg.jpg')] bg-cover bg-bottom bg-no-repeat p-5 rounded-2xl shadow-2xl overflow-hidden  lg:w-5xl">
+      <div className="relative bg-[url('/assets/bg.jpg')] bg-cover bg-bottom bg-no-repeat p-5 rounded-2xl shadow-2xl overflow-hidden lg:w-5xl">
         {/* Overlay hitam */}
         <div className="absolute inset-0 bg-black/60"></div>
 
@@ -21,9 +21,10 @@ export default function Hero() {
           </h1>
 
           <p className="mb-6">
-            Website resmi Pendidikan Informatika kelas C. Tempat berbagi
-            informasi, pengumuman, dokumentasi kegiatan, dan berbagai hal yang
-            berkaitan dengan perjalanan akademik kita bersama.
+            Lebih dari sekadar kelas, kami adalah keluarga. Selamat datang di
+            portal resmi Pendidikan Informatika Kelas C—wadah untuk mengabadikan
+            setiap momen, karya, dan cerita inspiratif dalam perjalanan akademik
+            kami.
           </p>
           <Link href="/#tentang">
             <Button
