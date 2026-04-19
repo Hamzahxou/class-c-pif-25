@@ -25,7 +25,6 @@ export default function Home() {
               "radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)",
           }}
         />
-        {/* Your Content/Components */}
       </div>
       <Header />
 
