@@ -6,7 +6,7 @@ export default function Pertanyaan() {
       index: 0,
       question: "Apa itu Cetar?",
       answer:
-        "Cetar merupakan sebuah singkatan dari Cerdas, Terampil, dan Responsif. Nama ini dipilih bukan cuma karena terdengar keren, tapi sebagai doa agar seluruh anggota kelas C bisa menjadi pribadi yang membanggakan di sekolah.",
+        "Cetar merupakan sebuah singkatan dari Cerdas, Etis, Tangguh, Amanah, Relevan. Nama ini dipilih bukan cuma karena terdengar keren, tapi sebagai doa agar seluruh anggota kelas C bisa menjadi pribadi yang membanggakan di sekolah.",
     },
     {
       index: 1,
