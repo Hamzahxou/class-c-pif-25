@@ -6,7 +6,7 @@ export default function Pertanyaan() {
       index: 0,
       question: "Apa itu Cetar?",
       answer:
-        "Cetar merupakan sebuah singkatan dari Cerdas, Etis, Tangguh, Amanah, Relevan. Nama ini dipilih bukan cuma karena terdengar keren, tapi sebagai doa agar seluruh anggota kelas C bisa menjadi pribadi yang membanggakan di sekolah.",
+        "Cetar merupakan sebuah singkatan dari Cerdas, Etis, Tangguh, Amanah, Relevan. Nama ini dipilih bukan cuma karena terdengar keren, tapi sebagai doa agar seluruh anggota kelas C bisa menjadi pribadi yang membanggakan di universitas ataupun diluar universitas.",
     },
     {
       index: 1,
@@ -49,10 +49,11 @@ export default function Pertanyaan() {
     },
     {
       index: 5,
-      question: "Apa Vibe atau kepribadian utama kelas kita?",
+      question: "Apa Vibe atau kepribadian utama kelas kami?",
       answer:
         "Kami dikenal sebagai kelas yang adaptif dan ekspresif. Website ini adalah bukti bahwa Kelas C tidak hanya sekadar duduk di bangku kuliah, tapi juga mampu berkolaborasi menciptakan sesuatu yang nyata di dunia digital.",
     },
   ];
+
   return <PertanyaanView faqs={faqs} />;
 }
