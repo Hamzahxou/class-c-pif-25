@@ -11,7 +11,7 @@ const navItems: NavItem[] = [
   { name: "Anggota", href: "/#anggota" },
   { name: "Galeri", href: "/#galeri" },
   { name: "Aktivitas", href: "/aktivitas" },
-  { name: "Kontak", href: "/#kontak" },
+  { name: "Pertanyaan", href: "/#pertanyaan" },
 ];
 
 export default function Header() {

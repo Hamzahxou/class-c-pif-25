@@ -18,12 +18,16 @@ export default function Tentang() {
           className="rounded-sm w-full"
         />
         <p className="leading-loose text-justify">
-          Pendidikan Informatika Kelas c adalah kelas yang kompak dan penuh
-          vibes positif. Di sini, kita nggak cuma belajar teori, tapi juga
-          praktik bareng, diskusi santai, dan ikut berbagai kegiatan seru
-          .Dengan suasana kelas yang suportif dan saling mendukung, kita tumbuh
-          bersama jadi calon pendidik yang kreatif, percaya diri, dan siap
-          berkembang.
+          Berawal dari ruang kelas yang sama di program studi Pendidikan
+          Informatika, Kelas C tumbuh menjadi wadah yang penuh dengan vibe
+          positif dan solidaritas tinggi. Kami percaya bahwa belajar bukan hanya
+          soal teori di depan layar, tapi tentang bagaimana kami berproses
+          bersama dalam praktik, bereksperimen dengan teknologi baru, dan saling
+          mendukung dalam setiap langkah studi. Di Kelas C, setiap individu
+          membawa warna unik yang menciptakan harmoni dalam kebersamaan. Kami
+          hadir untuk melampaui batas, membangun kepercayaan diri, dan
+          bertransformasi menjadi calon ahli informatika yang kreatif dan
+          solutif.
         </p>
       </div>
     </section>
