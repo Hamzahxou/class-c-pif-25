@@ -59,10 +59,10 @@ export const CardCarousel: React.FC<CarouselProps> = ({
   }
   `;
   return (
-    <section className="w-ace-y-4">
+    <div className="w-ace-y-4">
       <style>{css}</style>
 
-      <div className="flex w-full items-center justify-center gap-4">
+      <div className="flex w-full items-center justify-center gap-4 mask-[linear-gradient(to_right,transparent,black_1%,black_99%,transparent)]">
         <div className="w-full">
           <Swiper
             spaceBetween={50}
@@ -121,6 +121,6 @@ export const CardCarousel: React.FC<CarouselProps> = ({
           </Swiper>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

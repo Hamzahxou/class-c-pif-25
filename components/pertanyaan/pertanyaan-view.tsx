@@ -15,7 +15,7 @@ interface FAQItemProps {
 export default function PertanyaanView({ faqs }: { faqs: FAQItemProps[] }) {
   return (
     <section
-      className="bg-gray-100/80 relative mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] overflow-hidden py-16"
+      className="bg-gray-100 relative mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] overflow-hidden py-16"
       id="pertanyaan"
     >
       {/* Decorative elements */}

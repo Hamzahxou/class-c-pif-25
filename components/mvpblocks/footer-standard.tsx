@@ -107,7 +107,6 @@ export default function FooterStandard() {
             &copy; 2025 pif class cetar | Semua hak dilindungi undang-undang
           </p>
         </div>
-        <span className="from-primary/20 absolute inset-x-0 bottom-0 left-0 -z-10 h-1/3 w-full bg-linear-to-t" />
       </div>
 
       {/* Animations */}

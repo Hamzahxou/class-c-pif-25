@@ -5,11 +5,10 @@ import { anggotaKelas } from "@/data/anggota";
 export default function Anggota() {
   return (
     <section
-      className="bg-gray-100/80 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] overflow-hidden py-16"
+      className="bg-gray-100 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] overflow-hidden py-16"
       id="anggota"
     >
-      <section className="bg-gray-100/50 " id="anggota"></section>
-      <div className="container min-h-screen mx-auto lg:w-5xl px-5 py-10 ">
+      <div className="min-h-screen mx-auto lg:w-5xl px-5 py-10 ">
         <h1 className="lg:text-4xl text-3xl font-bold text-center mb-10">
           Anggota Kelas Kami
         </h1>
@@ -39,6 +38,7 @@ export default function Anggota() {
           </div>
         </div>
 
+        {/* <div className="mask-[linear-gradient(to_right,transparent,black_1%,black_99%,transparent)]"> */}
         <div>
           {/* <CardSwipes /> */}
           <CardCarousels />
