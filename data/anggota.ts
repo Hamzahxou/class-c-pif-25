@@ -68,14 +68,6 @@ export const anggotaKelas = [
     },
   },
   {
-    name: "Akbar",
-    image: path + "akbar.png",
-    description: {
-      full_name: "Mohammad Bahtiar Ilham Akbar",
-      quote: "-",
-    },
-  },
-  {
     name: "Satria",
     image: path + "satria.png",
     description: {
@@ -89,6 +81,23 @@ export const anggotaKelas = [
     description: {
       full_name: "Rizki Maulana Hidayah M",
       quote: "-",
+    },
+  },
+  {
+    name: "Akbar",
+    image: path + "akbar.png",
+    description: {
+      full_name: "Mohammad Bahtiar Ilham Akbar",
+      quote: "-",
+    },
+  },
+  {
+    name: "Saskia",
+    image: path + "saskia.png",
+    description: {
+      full_name: "Saskia Zalza Berliana",
+      quote:
+        "Kamu tidak harus hebat untuk memulai, tapi harus memulai untuk jadi hebat.",
     },
   },
 ];
