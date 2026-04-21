@@ -1,34 +1,48 @@
+const path = "/assets/anggota/";
+
 export const anggotaKelas = [
   {
-    name: "Hamzah",
-    image: "/assets/anggota/hamzah.png",
+    name: "Dany",
+    image: path + "dany.png",
   },
   {
-    name: "Irsyad",
-    image: "/assets/anggota/irsyad.png",
+    name: "Hamzah",
+    image: path + "hamzah.png",
   },
   {
     name: "Dani",
-    image: "/assets/anggota/dani.png",
+    image: path + "dani.png",
+  },
+  {
+    name: "Lailul",
+    image: path + "lailul.png",
+  },
+  {
+    name: "Irsyad",
+    image: path + "irsyad.png",
   },
   {
     name: "Wafi",
-    image: "/assets/anggota/wafi.png",
-  },
-  {
-    name: "Satria",
-    image: "/assets/anggota/satria.png",
-  },
-  {
-    name: "Akbar",
-    image: "/assets/anggota/akbar.png",
+    image: path + "wafi.png",
   },
   {
     name: "Farel Z",
-    image: "/assets/anggota/farelz.png",
+    image: path + "farelz.png",
   },
   {
     name: "Imal",
-    image: "/assets/anggota/imal.png",
+    image: path + "imal.png",
+  },
+  {
+    name: "Akbar",
+    image: path + "akbar.png",
+  },
+  {
+    name: "Satria",
+    image: path + "satria.png",
+  },
+  {
+    name: "Rizki",
+    image: path + "rizki.png",
   },
 ];
