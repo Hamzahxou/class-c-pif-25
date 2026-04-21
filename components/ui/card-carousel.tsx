@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,8 +18,17 @@ import {
 
 // import { Badge } from "@/components/ui/badge";
 
+interface ImageDescription {
+  full_name: string;
+  quote: string;
+}
+
 interface CarouselProps {
-  images: { src: string; alt: string }[];
+  images: {
+    src: string;
+    alt: string;
+    description: ImageDescription;
+  }[];
   autoplayDelay?: number;
   showPagination?: boolean;
   showNavigation?: boolean;
@@ -58,6 +67,8 @@ export const CardCarousel: React.FC<CarouselProps> = ({
     background: none;
   }
   `;
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
     <div className="w-ace-y-4">
       <style>{css}</style>
@@ -94,18 +105,40 @@ export const CardCarousel: React.FC<CarouselProps> = ({
           >
             {images.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="size-full rounded-3xl">
+                <div
+                  className="relative w-full size-full  overflow-hidden rounded-3xl cursor-pointer bg-gray-100"
+                  onClick={() =>
+                    setActiveIndex(activeIndex === index ? null : index)
+                  }
+                >
                   <Image
                     src={image.src}
-                    width={500}
-                    height={500}
-                    className="size-full rounded-xl"
                     alt={image.alt}
+                    width={200}
+                    height={200}
+                    className={`size-full  transition-transform duration-700 ${activeIndex === index ? "scale-110 " : "scale-100"}`}
                   />
+
+                  {/* Overlay Informasi: Animasi dari bawah ke tengah */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-3/6 flex flex-col items-center justify-center bg-black/80 p-6 text-white text-center transition-all duration-500 ease-out
+
+                       mask-[linear-gradient(to_bottom,transparent,black_50%,black_100%,transparent)]
+
+          ${activeIndex === index ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}
+                  >
+                    <h3 className="text-lg font-bold mb-2">
+                      {image.description.full_name || image.alt}
+                    </h3>
+                    <p className="text-sm leading-relaxed italic">
+                      {image.description.quote || "-"}
+                    </p>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
-            {images.map((image, index) => (
+
+            {/* {images.map((image, index) => (
               <SwiperSlide key={index}>
                 <div className="size-full rounded-3xl">
                   <Image
@@ -117,7 +150,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                   />
                 </div>
               </SwiperSlide>
-            ))}
+            ))} */}
           </Swiper>
         </div>
       </div>

@@ -38,9 +38,7 @@ export default function Anggota() {
           </div>
         </div>
 
-        {/* <div className="mask-[linear-gradient(to_right,transparent,black_1%,black_99%,transparent)]"> */}
         <div>
-          {/* <CardSwipes /> */}
           <CardCarousels />
         </div>
       </div>
@@ -48,25 +46,11 @@ export default function Anggota() {
   );
 }
 
-// function CardSwipes() {
-//   const namaAnggota = ["hamzah", "irsyad"];
-
-//   const images = namaAnggota.map((nama) => ({
-//     src: `/assets/anggota/${nama.toLowerCase()}.png`,
-//     alt: nama,
-//   }));
-
-//   return (
-//     <div className="w-full">
-//       <CardSwipe images={images} autoplayDelay={10000} slideShadows={false} />
-//     </div>
-//   );
-// }
-
 function CardCarousels() {
   const images = anggotaKelas.map((anggota) => ({
     src: anggota.image,
     alt: anggota.name,
+    description: anggota.description,
   }));
 
   return (
