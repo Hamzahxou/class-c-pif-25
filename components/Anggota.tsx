@@ -2,6 +2,17 @@
 import { CardCarousel } from "@/components/ui/card-carousel";
 import { anggotaKelas } from "@/data/anggota";
 
+interface ImageDescription {
+  full_name: string;
+  quote: string;
+}
+
+interface ImagesInterface {
+  image: string;
+  name: string;
+  description: ImageDescription;
+}
+
 export default function Anggota() {
   return (
     <section
@@ -47,11 +58,7 @@ export default function Anggota() {
 }
 
 function CardCarousels() {
-  const images = anggotaKelas.map((anggota) => ({
-    src: anggota.image,
-    alt: anggota.name,
-    description: anggota.description,
-  }));
+  const images: ImagesInterface[] = anggotaKelas;
 
   return (
     <div className="">

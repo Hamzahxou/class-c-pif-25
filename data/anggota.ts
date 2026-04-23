@@ -28,6 +28,15 @@ export const anggotaKelas = [
     },
   },
   {
+    name: "Farel A",
+    image: path + "farelA.png",
+    description: {
+      full_name: "Farel Arfiandra",
+      quote:
+        "Jangan biarkan kenyamanan palsu di layar membuatmu kehilangan keberanian di dunia nyata.",
+    },
+  },
+  {
     name: "Lailul",
     image: path + "lailul.png",
     description: {
@@ -81,6 +90,15 @@ export const anggotaKelas = [
     description: {
       full_name: "Rizki Maulana Hidayah M",
       quote: "-",
+    },
+  },
+  {
+    name: "Juven",
+    image: path + "juven.png",
+    description: {
+      full_name: "Juventus Tembinop",
+      quote:
+        "Jauh dari rumah bukan berarti kehilangan arah. Madura adalah tempatku menempa diri, Papua adalah alasan untuk tetap berdiri.",
     },
   },
   {

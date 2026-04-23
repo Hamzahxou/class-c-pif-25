@@ -25,8 +25,8 @@ interface ImageDescription {
 
 interface CarouselProps {
   images: {
-    src: string;
-    alt: string;
+    image: string;
+    name: string;
     description: ImageDescription;
   }[];
   autoplayDelay?: number;
@@ -112,8 +112,8 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                   }
                 >
                   <Image
-                    src={image.src}
-                    alt={image.alt}
+                    src={image.image}
+                    alt={image.name}
                     width={200}
                     height={200}
                     className={`size-full  transition-transform duration-700 ${activeIndex === index ? "scale-110 " : "scale-100"}`}
@@ -128,7 +128,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
           ${activeIndex === index ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}
                   >
                     <h3 className="text-lg font-bold mb-2">
-                      {image.description.full_name || image.alt}
+                      {image.description.full_name || image.name}
                     </h3>
                     <p className="text-sm leading-relaxed italic">
                       {image.description.quote || "-"}
