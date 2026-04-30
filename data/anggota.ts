@@ -24,7 +24,7 @@ export const anggotaKelas = [
     image: path + "dani.png",
     description: {
       full_name: "Daniyarta Nuzulul Hidayah",
-      quote: "-",
+      quote: "Jangan pernah menukar keaslian dirimu demi persetujuan orang lain, biarkan orang tidak menyukaimu. Tidak semua orang akan menyukaimu saat kamu menjadi diri sendiri.",
     },
   },
   {
